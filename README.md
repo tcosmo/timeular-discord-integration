@@ -17,45 +17,12 @@ uvicorn main:app --reload
 
 ### Deploying locally
 
-You can deploy your setup locally with `ngrok`, replace `8000` by the port you are using in `uvicorn`:
+For this you need to have set `TIMEULAR_KEY` and `TIMEULAR_SECRET` in your environment (.env are supported).
+
+You can deploy your setup locally with `ngrok` and `uvicorn` by running:
 
 ```bash
-ngrok http 8000
+./run.sh 8000
 ```
 
-Then, register timeular events `trackingStarted` and `trackingStopped` on `/trackingStarted` and `/trackingStopped` of your `ngrox` URL:
-
-```bash
-curl --location --request POST 'https://api.timeular.com/api/v3/developer/sign-in' \
---header 'Content-Type: application/json' \
---data-raw '{
-  "apiKey"    : "{{TIMEULAR_API_KEY}}",
-  "apiSecret" : "{{TIMEULAR_API_SECRET}}"
-}'
-```
-
-```bash
-curl --location --request POST 'https://api.timeular.com/api/v3/webhooks/subscription' \
---header 'Authorization: Bearer <AUTH_TOKEN>' \
---data-raw '{
-    "event": "trackingStarted",
-    "target_url": "https://your-url/trackingStarted"
-}'
-```
-
-```bash
-curl --location --request POST 'https://api.timeular.com/api/v3/webhooks/subscription' \
---header 'Authorization: Bearer <AUTH_TOKEN>' \
---data-raw '{
-    "event": "trackingStopped",
-    "target_url": "https://your-url/trackingStopped"
-}'
-```
-
-And you're good to go :) 
-
-Useful links:
-
-- [https://developers.timeular.com/#ee43a6cf-0307-4a73-ac2b-71f50feac605](https://developers.timeular.com/#ee43a6cf-0307-4a73-ac2b-71f50feac605)
-- [https://discord.com/developers/applications](https://discord.com/developers/applications)
-
+Replace `8000` by your port.

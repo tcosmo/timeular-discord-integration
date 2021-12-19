@@ -21,6 +21,7 @@ async def on_ready():
 
 @app.on_event("startup")
 async def startup_event():
+    """Credits to https://gist.github.com/haykkh/49ed16a9c3bbe23491139ee6225d6d09"""
     asyncio.create_task(client.start(TOKEN))
 
 

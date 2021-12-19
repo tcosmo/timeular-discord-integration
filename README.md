@@ -7,7 +7,7 @@ This is a minimalistic timeular discord integration that will change the satus o
 You need to set the `DISCORD_TOKEN` with your discord app token. You can use a .env file.
 
 ```bash
-git clone git@github.com:tcosmo/timeular-discord-integration.git
+git clone https://github.com/tcosmo/timeular-discord-integration.git
 cd timeular-discord-integration.git
 python3.9 -m venv venv
 source venv/bin/activate

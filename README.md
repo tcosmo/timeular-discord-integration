@@ -15,7 +15,7 @@ pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
-### Deploying locally
+### Deploy locally with `ngrok`
 
 For this you need to have set `TIMEULAR_KEY` and `TIMEULAR_SECRET` in your environment (.env are supported).
 
@@ -26,3 +26,5 @@ You can deploy your setup locally with `ngrok` and `uvicorn` by running:
 ```
 
 Replace `8000` by your port.
+
+*Warning:* your `ngrok` integration will only last for 2 hours if you do not create a user account (free plan) on [https://ngrok.com/](https://ngrok.com/) and launch `ngrok authtoken <ngrok token>` beforehand (this has to be done only once).

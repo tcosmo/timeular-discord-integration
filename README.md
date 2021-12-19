@@ -1,6 +1,6 @@
 # timeular-discord-integration
 
-This is a minimalist timeular discord integration that will change the satus of a bot according to which activity is currently tracked by timeular. It is implemented using FastAPI.
+This is a minimalistic timeular discord integration that will change the satus of a bot according to which activity is currently tracked by timeular. It is implemented using FastAPI.
 
 ## Getting started
 
